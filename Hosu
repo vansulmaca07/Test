@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Down Logsheet</title>
+ 
+    <!-- css file link -->
+    <link rel="stylesheet" href="index.css">
+</head>   
+<body>
+    <div class="parent">
+        <div class="add-logsheet">
+            
+        </div>   
+        <div class="logsheet-table">
+            <h3 class="title">機器のダウンタイムモニタリング</h3>
+
+            <p1 id="title">入力情報</p1>
+            <div class="sub-box">
+                
+                <div class="operatorside"style="width:50%; float:left">
+                <label id="operator">依頼者</label>
+
+                <!--<input type="datetime-local"
+                id="time1" 
+                name="time1"
+                value="">-->
+
+                <input type="text"
+                id="lotid"
+                name="lotid"
+                value=""
+                placeholder="ロットNo。">
+
+                <input type="text"
+                id="employeeid"
+                name="employeeid"
+                value=""
+                placeholder="依頼者名を入力">
+
+                <!--Enter Error instead of selection-->
+                <!--<input type="text"
+                id="errorid"
+                name="errorid"
+                value=""
+                placeholder="入力エラー内容">-->
+                <!--<div id="div1"></div>-->
+                
+                <select name="errorid" id="errorid" type="text" onchange="showfield(this.options[this.selectedIndex].value)">
+                    <option value="" disabled selected>エラーを選択</option>
+                    <option value="電極スクラッチ">電極スクラッチ</option>
+                    <option value="フィーダNG">フィーダNG</option>
+                    <option value="電極崩壊">電極崩壊</option>
+                    <option value="突出誤差">突出誤差</option>
+                    <option value="障害">障害</option> 
+                    <option value="Other">Other</option>    
+                </select>
+                <div id="div1"></div>
+
+                <button id="submit-button2" class="btn"onclick="firstinput()">提出する(SUBMIT)</button>
+                </div>
+
+                <div class="maintenanceside" style="width:50%; float:right">
+                <label id="maintenance">KP</label>
+                <input type="text"
+                id="maintenanceid"
+                name="maintenanceid"
+                value=""
+                placeholder="KPを入力"
+                disabled>
+                
+                <!--<input type="datetime-local"
+                id="time2" 
+                name="time2"
+                value="">-->
+                
+                <input type="text"
+                id="actiondone"
+                name="actiondone"
+                placeholder="是正措置"
+                disabled>
+
+                <select disabled name="ackid" id="ackid" type="text">
+                    <option value="" disabled selected>謝辞</option>
+                    <option value="NOT OK">NOT OK</option>
+                    <option value="OK">OK</option>
+                </select>
+                
+                <!--Enter acknowledgement manually-->
+                <!--<input type="text"
+                id="ackid"
+                name="ackid"
+                value=""
+                placeholder="操作可能">-->
+       
+                <button disabled id="submit-button1" class="btn" onclick="addToTable()">提出する(SUBMIT)</button>               
+                
+                </div>
+            </div>
+            <div class="table-body2">
+                <!--<label for="StatusTable" style="text-align: center;" style="width:100%">STATUS</label>-->
+                <!--<p style="text-align: center;">STATUS</p>-->
+                <table id="StatusTable" style="width=100%" border="2">
+                    <thead>
+                        <tr>
+                            <!--<th style="width:5%">No.</th>-->
+                            <th style="width:20%">ロットNo。</th> 
+                            <th style="width:20%">発生日時</th>
+                            <th style="width:20%">依頼者</th>
+                            <th style="width:40%">エラー内容</th>              
+                        </tr>
+
+                    </thead>
+                    <tbody id="status">
+                    </tbody>
+                </table>
+                
+            </div>
+            <div class="table-body">               
+                <label for="myTable" style="text-align: center;">機器No.</label>
+                <table id="myTable" style="width=100%" border ="2">
+                    <thead>
+                        <tr>
+                            <th style="width:5%">番号No.</th>
+                            <th style="width:5%">ロットNo。</th> 
+                            <th style="width:10%">依頼者</th>
+                            <th style="width:17.5%">エラー内容</th>
+                            <th style="width:10%">KP</th>
+                            <th style="width:17.5%">是正措置</th>
+                            <th style="width:10%">操作可能</th>
+                            <th style="width:10%">発生日時</th>
+                            <th style="width:10%">終了日時</th> 
+                            <th style="width:10%">合計時間 (分)</th> 
+                        </tr>
+
+                    </thead>
+                    <tbody id="main">
+
+                    </tbody>
+                </table>
+
+                <h3 id="no-data">機器のダウンタイム監視(No Data Available)</h3>
+                
+                <div class="footer">
+                    
+                <button id="exportToExcel" onclick="exportTableToExcel('myTable')">エクスポートデータ(.xls)</button>
+                <button onclick="tableToExcel('myTable', 'W3C Example Table')">Export</button>
+                <p1 type="text" value="datenow" id="datenow"></p1>
+                <p2 type="text" value="1stime" id="1stime"></p2>
+                
+                <!-- <button id="submit-button3" class="btn"onclick="save_data()">SAVE</button> -->
+                <!-- <button id="submit-button4" class="btn"onclick="load_data()">LOAD</button> -->
+                
+                </div>
+            </div>      
+        </div> 
+    </div>
+</body> 
+
+<!--java script source file-->
+
+   <!--script-->
+<script type="text/javascript" src="index.js"></script>
+   </html>
+<script type="text/javascript" src="tabletoexcel.js"></script>
+</html>
+<script type="text/javascript" src="datetime.js"></script>
+</html>
+<script type="text/javascript" src="tableborder.js"></script>
+</html>
