@@ -1,0 +1,147 @@
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+    font-family: sans-serif;
+
+}
+.parent{
+    display: grid;
+    grid-template-rows: 1fr 50fr 10fr;
+    min-height: 100vh;
+
+}
+
+.operatorside {
+    background-color: rgb(182, 232, 246);
+    overflow: auto;    
+}
+
+.maintenanceside {
+    background-color: rgb(182, 232, 246);
+    overflow: auto;
+   
+}
+.add-logsheet {
+    background: rgb(223, 238, 243);
+    text-transform: capitalize;
+    position: relative;
+}
+
+.title {
+    background: darkslategray;
+    color: whitesmoke;
+    margin-top: 0;
+    padding: 0.5rem 0;
+
+} 
+
+.logsheet-table {
+    background-color: rgb(94, 198, 246);
+    overflow-y: auto;
+}
+
+.sub-box{
+    grid-template-columns: 2fr 2fr;
+    text-align: center;
+    padding: 1rem;
+    background-color: rgb(157, 161, 244);
+    border-bottom-color: black;
+    
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    padding: 0rem 1rem;
+    background-color: azure;
+}
+
+input{
+    width: 15%;
+    font-size: 0.9rem;
+    border-radius: 0.3rem;
+    margin: 0.5rem 0;
+    padding: 5px 10px;
+    border: none;
+    background: rgb(254, 253, 206);
+    color: black;
+}
+
+select {
+    font-size: 0.9rem;
+    border-radius: 0.3rem;
+    margin: 0.5rem 0;
+    padding: 0.1rem 0.4rem;
+    background: rgb(254, 253, 206);
+    color: black;
+
+}
+
+.submit-button1
+input:focus{
+    outline: none;
+    background: rgb(241, 239, 239); 
+}
+
+.logsheet-table {
+    background-color: rgb(226, 237, 248);
+    overflow-y: auto; 
+}
+
+.table-body{
+    padding: 1rem 2rem;
+    text-align: center;
+    height: 25rem;
+    overflow: hidden;
+    overflow-y: auto;
+    
+}
+
+.table-body2{
+    padding: 1rem 2rem; 
+    text-align: center;
+    height: 5rem;
+    overflow y: auto;
+
+    /*overflow: hidden; */
+    /*overflow-y: auto; */
+    
+}
+
+.btn:active{
+    background:cadetblue;
+}
+
+#submit-button1{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.table-body table{
+    width: 100%;
+    color: dimgray;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    background-color: aliceblue;
+}
+
+.table-body2 table{
+    width: 100%;
+    color: dimgray;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    background-color: aliceblue;
+    text-align: center;
+
+}
+table td,th{
+    /* padding: 0.2rem 0;*/
+    text-transform: capitalize;
+    color: black;
+  
+}
