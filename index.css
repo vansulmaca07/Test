@@ -51,7 +51,6 @@ body{
     padding: 1rem;
     background-color: rgb(157, 161, 244);
     border-bottom-color: black;
-    
 }
 
 .footer{
@@ -138,13 +137,36 @@ input:focus{
     font-size: 0.8rem;
     background-color: aliceblue;
     text-align: center;
+    margin-top: 2rem;
 
 }
 table td,th{
     /* padding: 0.2rem 0;*/
     text-transform: capitalize;
     color: black;
-  
 }
 
+.captionstatus {
+    text-align: left;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.mainstatus {
+    text-align: left;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.selection {
+    width: auto;
+}
+
+.maintablefooter {
+    text-align: left;
+    font-weight: bold;
+    font-size: 0.7rem;
+}
 
