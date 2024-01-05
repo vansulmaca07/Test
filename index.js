@@ -176,7 +176,7 @@ function displayTable(){
         tr.appendChild(td1);
 
         var td89=document.createElement('td');
-        td89.innerHTML= "SW 39";
+        td89.innerHTML= "SW39";
         tr.appendChild(td89);
 
         var td33=document.createElement('td');
