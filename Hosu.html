@@ -24,15 +24,11 @@
                 <div class="operatorside"style="width:50%; float:left">
                 <label id="operator">依頼者</label>
 
-                <!--<input type="datetime-local"
-                id="time1" 
-                name="time1"
-                value="">-->
-
                 <input type="text"
                 id="lotid"
                 name="lotid"
                 value=""
+                style="width:10%"
                 placeholder="ロットNo。">
 
                 <input type="text"
@@ -50,17 +46,16 @@
                 <!--<div id="div1"></div>-->
                 
                 <select name="errorid" id="errorid" type="text" onchange="showfield(this.options[this.selectedIndex].value)">
-                    <option value="" disabled selected>エラーを選択</option>
+                    <option value="noinput" disabled selected>エラーを選択</option>
                     <option value="電極スクラッチ">電極スクラッチ</option>
                     <option value="フィーダNG">フィーダNG</option>
                     <option value="電極崩壊">電極崩壊</option>
                     <option value="突出誤差">突出誤差</option>
                     <option value="障害">障害</option> 
-                    <option value="Other">Other</option>    
+                    <option value="Other">その他</option>    
                 </select>
+                <button id="submit-button2" class="btn"onclick="firstinput()">提出する</button>
                 <div id="div1"></div>
-
-                <button id="submit-button2" class="btn"onclick="firstinput()">提出する(SUBMIT)</button>
                 </div>
 
                 <div class="maintenanceside" style="width:50%; float:right">
@@ -71,12 +66,7 @@
                 value=""
                 placeholder="KPを入力"
                 disabled>
-                
-                <!--<input type="datetime-local"
-                id="time2" 
-                name="time2"
-                value="">-->
-                
+                        
                 <input type="text"
                 id="actiondone"
                 name="actiondone"
@@ -88,16 +78,8 @@
                     <option value="NOT OK">NOT OK</option>
                     <option value="OK">OK</option>
                 </select>
-                
-                <!--Enter acknowledgement manually-->
-                <!--<input type="text"
-                id="ackid"
-                name="ackid"
-                value=""
-                placeholder="操作可能">-->
-       
-                <button disabled id="submit-button1" class="btn" onclick="addToTable()">提出する(SUBMIT)</button>               
-                
+                <button disabled id="submit-button1" class="btn" onclick="addToTable()">提出する</button>               
+                <div id="div2"></div>
                 </div>
             </div>
             <div class="table-body2">
@@ -117,19 +99,19 @@
                     <tbody id="status">
                     </tbody>
                 </table>
-                
             </div>
             <div class="table-body">               
-                <label for="myTable" style="text-align: center;">機器No.</label>
+                <label for="myTable" style="text-align: left;">機器No. SW 39</label>
                 <table id="myTable" style="width=100%" border ="2">
                     <thead>
                         <tr>
                             <th style="width:5%">番号No.</th>
+                            <th style="width:5%">機器No.</th>
                             <th style="width:5%">ロットNo。</th> 
                             <th style="width:10%">依頼者</th>
-                            <th style="width:17.5%">エラー内容</th>
+                            <th style="width:15%">エラー内容</th>
                             <th style="width:10%">KP</th>
-                            <th style="width:17.5%">是正措置</th>
+                            <th style="width:15%">是正措置</th>
                             <th style="width:10%">操作可能</th>
                             <th style="width:10%">発生日時</th>
                             <th style="width:10%">終了日時</th> 
