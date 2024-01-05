@@ -21,7 +21,6 @@ var starT=[];
 var time3=[];
 var errorencountered=[];
 
-
 //var errorencountered=document.getElementById('errorid').value;
 function firstinput(){
 
@@ -30,7 +29,7 @@ function firstinput(){
     var sub11= document.getElementById('employeeid').value;    
     let errorencountered=document.getElementById('errorid').value;
     if (errorencountered==='Other'){
-      var sub22=document.getElementById('div1').value;
+      var sub22=document.getElementById('others123').value;
     }
     else {
       var sub22=document.getElementById('errorid').value;
@@ -65,8 +64,7 @@ function firstinput(){
         alert("入力不完全(Input Incomplete)");
 }
 
-function displayTable1(){
-  
+function displayTable1(){  
   const length= employeeid.length;
   var tr=document.createElement('tr');
 
@@ -112,14 +110,23 @@ function displayTable1(){
   document.getElementById("maintenanceid").disabled = false;
   document.getElementById("ackid").disabled = false;
   document.getElementById("actiondone").disabled = false;
-         
+
 }
 
 function addToTable(){
    
   document.getElementById('no-data').style.display="none";
   var sub1= document.getElementById('employeeid').value;
-  var sub2= document.getElementById('errorid').value;
+  //var sub2= document.getElementById('errorid').value;
+
+  let errorencountered=document.getElementById('errorid').value;
+  if (errorencountered==='Other'){
+    var sub2=document.getElementById('others123').value;
+  }
+  else {
+    var sub2=document.getElementById('errorid').value;
+  }
+
   var sub3= document.getElementById('maintenanceid').value;
   var sub4= document.getElementById('ackid').value;
   var sub7= document.getElementById('actiondone').value;
@@ -167,6 +174,10 @@ function displayTable(){
         var td1=document.createElement('td');
         td1.innerHTML= index[i];
         tr.appendChild(td1);
+
+        var td89=document.createElement('td');
+        td89.innerHTML= "SW 39";
+        tr.appendChild(td89);
 
         var td33=document.createElement('td');
         td33.innerHTML= lotid2[i];
@@ -222,6 +233,7 @@ function displayTable(){
     //document.getElementById('time1').value='';
     document.getElementById('lotid').value='';
     //document.getElementById('time2').value='';
+    document.getElementById('div1').innerHTML='';
 
     document.getElementById("submit-button2").disabled = false;
     document.getElementById("submit-button1").disabled = true;
@@ -239,7 +251,7 @@ function myDeleteFunction() {
 }
 
 function showfield(name){
-  if(name=='Other')document.getElementById('div1').innerHTML='Other: <input type="text" name="other" value=""/>';
+  if(name=='Other')document.getElementById('div1').innerHTML='その他: <input type="text" name="other" value="" id="others123" placeholder="ご指定ください" >';
   else document.getElementById('div1').innerHTML='';
 }
 
