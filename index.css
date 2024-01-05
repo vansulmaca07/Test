@@ -6,18 +6,18 @@ body{
     text-align: center;
     overflow: hidden;
     font-family: sans-serif;
+    background-color: rgb(182, 232, 246);
 
 }
 .parent{
     display: grid;
     grid-template-rows: 1fr 50fr 10fr;
     min-height: 100vh;
-
 }
 
 .operatorside {
     background-color: rgb(182, 232, 246);
-    overflow: auto;    
+    overflow: auto;
 }
 
 .maintenanceside {
@@ -26,7 +26,8 @@ body{
    
 }
 .add-logsheet {
-    background: rgb(223, 238, 243);
+    background-color: rgb(182, 232, 246);
+    /*background: rgb(223, 238, 243);*/
     text-transform: capitalize;
     position: relative;
 }
@@ -36,11 +37,11 @@ body{
     color: whitesmoke;
     margin-top: 0;
     padding: 0.5rem 0;
-
 } 
 
 .logsheet-table {
-    background-color: rgb(94, 198, 246);
+    background-color: rgb(182, 232, 246);
+    /*background-color: rgb(94, 198, 246);*/
     overflow-y: auto;
 }
 
@@ -62,7 +63,7 @@ body{
 }
 
 input{
-    width: 15%;
+    /*width: 15%;*/
     font-size: 0.9rem;
     border-radius: 0.3rem;
     margin: 0.5rem 0;
@@ -79,7 +80,6 @@ select {
     padding: 0.1rem 0.4rem;
     background: rgb(254, 253, 206);
     color: black;
-
 }
 
 .submit-button1
@@ -89,7 +89,8 @@ input:focus{
 }
 
 .logsheet-table {
-    background-color: rgb(226, 237, 248);
+    background-color: rgb(182, 232, 246);
+    /*background-color: rgb(226, 237, 248);*/
     overflow-y: auto; 
 }
 
@@ -99,18 +100,18 @@ input:focus{
     height: 25rem;
     overflow: hidden;
     overflow-y: auto;
-    
+    margin-top: 1rem; 
 }
 
 .table-body2{
+    margin-top: 1rem;
     padding: 1rem 2rem; 
     text-align: center;
     height: 5rem;
     overflow y: auto;
 
     /*overflow: hidden; */
-    /*overflow-y: auto; */
-    
+    /*overflow-y: auto; */  
 }
 
 .btn:active{
@@ -145,3 +146,5 @@ table td,th{
     color: black;
   
 }
+
+
