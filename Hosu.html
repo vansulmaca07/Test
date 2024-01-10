@@ -15,7 +15,7 @@
         <div class="add-logsheet">           
         </div>   
         <div class="logsheet-table">
-            <h3 class="title">機器のダウンタイムモニタリング</h3>
+            <h3 class="title">エラー履歴システム</h3>
             
             <p1 id="title">入力情報</p1>
             <div class="sub-box">
@@ -56,7 +56,7 @@
                       
                 </select>
 
-                <button id="submit-button2" class="btn"onclick="firstinput()">提出する</button>
+                <!--<a href=\A>--><button id="submit-button2" class="btn"onclick="firstinput()">提出する</button><!--</a>-->
                 <div id="div1"></div>
                 </div>
 
@@ -82,7 +82,7 @@
                     <option value="NOT OK">NOT OK</option>
                     <option value="OK">OK</option>
                 </select>
-                <button disabled id="submit-button1" class="btn" onclick="addToTable()">提出する</button>               
+                <!--<a href=\a>--><button disabled id="submit-button1" class="btn" onclick="addToTable()">提出する</button><!--</a><br>-->               
                 
                 </div>
             </div>
@@ -98,7 +98,8 @@
                             <th style="width:20%">ロットNo。</th> 
                             <th style="width:20%">発生日時</th>
                             <th style="width:20%">依頼者</th>
-                            <th style="width:40%">エラー内容</th>              
+                            <th style="width:40%">エラー内容</th>  
+                            <!--<th style="width:10%">KP</th>-->            
                         </tr>
 
                     </thead>
@@ -109,7 +110,7 @@
             <div class="table-body">               
                 <!--<label for="myTable" style="text-align: left">機器No. SW 39</label>-->
                 <table id="myTable" style="width=100%" border ="2">
-                    <caption class="mainstatus">機器No. SW39</caption>
+                    <caption class="mainstatus">機器No.<input type="text" id="machineid" value="" style="width:5%"> </caption>
                     <thead>
                         <tr>
                             <th style="width:5%">番号No.</th>
@@ -135,6 +136,7 @@
                 <div class="footer">
                     
                 <button id="exportToExcel" onclick="exportTableToExcel('myTable')">エクスポートデータ(.xls)</button>
+                <!--<button id="button5" class="btn"onclick="TestLang()">try</button>-->
                 <p1 type="text" value="datenow" id="datenow"></p1>
                
                 
@@ -145,6 +147,7 @@
             </div>      
         </div> 
     </div>
+    
 </body> 
 
 <!--java script source file-->
@@ -158,4 +161,5 @@
 </html>
 <script type="text/javascript" src="tableborder.js"></script>
 </html>
+
 
