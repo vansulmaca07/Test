@@ -7,8 +7,9 @@ body{
     overflow: hidden;
     font-family: sans-serif;
     background-color: rgb(182, 232, 246);
-
+    
 }
+
 .parent{
     display: grid;
     grid-template-rows: 1fr 50fr 10fr;
