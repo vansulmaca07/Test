@@ -6,8 +6,7 @@ body{
     text-align: center;
     overflow: hidden;
     font-family: sans-serif;
-    background-color: rgb(182, 232, 246);
-    
+    background-color: rgb(182, 232, 246);    
 }
 
 .parent{
@@ -24,8 +23,8 @@ body{
 .maintenanceside {
     background-color: rgb(182, 232, 246);
     overflow: auto;
-   
 }
+
 .add-logsheet {
     background-color: rgb(182, 232, 246);
     /*background: rgb(223, 238, 243);*/
@@ -97,10 +96,11 @@ input:focus{
 .table-body{
     padding: 1rem 2rem;
     text-align: center;
-    height: 25rem;
+    height: 20rem;
     overflow: hidden;
     overflow-y: auto;
     margin-top: 1rem; 
+    margin-bottom: 1rem;
 }
 
 .table-body2{
@@ -109,7 +109,6 @@ input:focus{
     text-align: center;
     height: 5rem;
     overflow y: auto;
-
     /*overflow: hidden; */
     /*overflow-y: auto; */  
 }
