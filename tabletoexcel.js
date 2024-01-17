@@ -1,4 +1,4 @@
-function exportTableToExcel(myTable, filename=''){
+function exportTableToExcel(myTable, filename='error history'){
     var downloadLink;
     var dataType = 'application/vnd.ms-excel';
     var tableSelect = document.getElementById(myTable);
