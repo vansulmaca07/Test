@@ -67,7 +67,7 @@ document.getElementById('status').appendChild(tr4);
 
 function displayTable1(){  
   const length= employeeid.length;
-  tr4=document.createElement('tr');
+  var tr4 =document.createElement('tr');
 
   for(var i=0;i<length;i++)
   {
@@ -103,8 +103,58 @@ function displayTable1(){
   document.getElementById("maintenanceid").disabled = false;
   document.getElementById("ackid").disabled = false;
   document.getElementById("actiondone").disabled = false;
+  document.getElementById("machineid").disabled = true;
+
+  PassData();
+  warningPage();
 
 }
+
+function PassData(){
+
+  var lotidData = document.getElementById('lotid').value;
+  localStorage.setItem('lotidlocal',lotidData);
+  var machineData = document.getElementById('machineid').value;
+  localStorage.setItem('machineidlocal',machineData);
+  var employeeidData = document.getElementById('employeeid').value;
+  localStorage.setItem('employeeidlocal',employeeidData);
+  let errorencountered=document.getElementById('errorid').value;
+  if (errorencountered==='Other'){
+    var erroridData=document.getElementById('others123').value;
+  }
+  else {
+    var erroridData=document.getElementById('errorid').value;
+  }
+  //var erroridData= document.getElementById('errorid').value;
+  localStorage.setItem('erroridlocal',erroridData);
+
+  return false;
+
+}
+
+var newWin;
+
+function warningPage()
+{
+   newWin =window.open("warningpage.html","name","width=600,height=400");
+ //  newWin =window.open("warningpage.html","name");
+ // newWin=window.location.href="warningpage.html";
+   document.onmousedown=focusPopup;
+   document.onkeyup=focusPopup;
+   document.onmousemove=focusPopup;
+
+  //  var left = (screen.width/2)-(w/2);
+  //  var top = (screen.height/2)-(h/2);
+  //  newWin = window.open('warningpage.html','name', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
+   return newWin;
+
+  }
+
+function focusPopup(){
+  if(!newWin.closed){
+    newWin.focus();
+  }
+} 
 
 function addToTable(){
    
@@ -146,6 +196,7 @@ function addToTable(){
   
   myDeleteFunction();
   displayTable();
+  
   
   }
 
@@ -210,6 +261,18 @@ function displayTable(){
     }
     c++;
 
+  //  localStorage.setItem('myTableData1', JSON.stringify(index));
+   // localStorage.setItem('myTableData2', JSON.stringify(machineid));
+   // localStorage.setItem('myTableData3', JSON.stringify(lotid2));
+   // localStorage.setItem('myTableData4', JSON.stringify(employeeid2));
+   // localStorage.setItem('myTableData5', JSON.stringify(errorid2));
+   // localStorage.setItem('myTableData6', JSON.stringify(maintenanceid));
+   // localStorage.setItem('myTableData7', JSON.stringify(actiondone));
+   // localStorage.setItem('myTableData8', JSON.stringify(ackid));
+   // localStorage.setItem('myTableData9', JSON.stringify(time1));
+   // localStorage.setItem('myTableData10', JSON.stringify(time3));
+   // localStorage.setItem('myTableData11', JSON.stringify(totaltime));
+
     document.getElementById('employeeid').value='';
     document.getElementById('errorid').value='';
     document.getElementById('maintenanceid').value='';
@@ -223,6 +286,7 @@ function displayTable(){
     document.getElementById("employeeid").disabled = false;
     document.getElementById("errorid").disabled = false;
     document.getElementById("lotid").disabled = false;
+    document.getElementById("machineid").disabled = false;
     document.getElementById("maintenanceid").disabled = true;
     document.getElementById("ackid").disabled = true;
     document.getElementById("actiondone").disabled = true;
@@ -236,3 +300,24 @@ function showfield(name){
   if(name=='Other')document.getElementById('div1').innerHTML='その他: <input type="text" name="other" value="" id="others123" placeholder="ご指定ください" >';
   else document.getElementById('div1').innerHTML='';
 }
+
+function deleteData(){
+    localStorage.clear()
+}
+
+function statuspage() {
+  window.location.href = "machinestatus.html";
+}
+
+//function runpy(){
+  //var pythonScriptPath = "test.py";
+    // Run the Python script.
+    //subprocess.run(["python", pythonScriptPath]);
+ // }
+
+
+
+
+
+
+
