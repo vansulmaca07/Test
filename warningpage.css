@@ -1,0 +1,61 @@
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+    font-family: sans-serif;
+    background-color: rgb(244, 6, 6);
+    grid-template-rows: 1fr 3fr 5fr 3f 1fr;
+}
+
+.mainbody{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: sans-serif;
+    background-color: rgb(244, 6, 6);
+    grid-template-rows: 2fr 10fr 5fr 3f 1fr;
+}
+
+.spacer {
+    height: 10%;
+}
+.sign {
+    height: 30%;
+    background-color: rgb(244, 6, 6);
+    text-align: center;
+    font-size: 5rem;
+}
+
+.sign2 {
+    height: 30%;
+    background-color: rgb(244, 6, 6);
+    text-align: center;
+    font-size: 2rem;
+}
+
+.machinestatus {
+    background-color: rgb(244, 6, 6);
+    /*text-align: center;*/
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.machineid{
+    height: 20%;
+    background-color: rgb(244, 6, 6);
+    font-size: 2rem;
+    text-align: center;    
+}
+
+.footer {
+    height: 10%;
+    background-color:rgb(244, 6, 6) ;
+    text-align: center;
+    font-size: 1rem;
+}
