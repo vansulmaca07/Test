@@ -56,7 +56,8 @@
                       
                 </select>
 
-                <!--<a href=\A>--><button id="submit-button2" class="btn"onclick="firstinput()">提出する</button><!--</a>-->
+                <!--<a href="warningpage.html" target="popup" onclick="window.open('warningpage.html','name','width=600,height=400')"><button id="submit-button2" class="btn"onclick="firstinput()">提出する</button></a>-->
+                <button id="submit-button2" class="btn" onclick="firstinput()">提出する</button>
                 <div id="div1"></div>
                 </div>
 
@@ -78,11 +79,11 @@
                 disabled>
 
                 <select style="width:20%" disabled name="ackid" id="ackid" type="text">
-                    <option value="" disabled selected>謝辞</option>
+                    <option value="" disabled selected>判定</option>
                     <option value="NOT OK">NOT OK</option>
                     <option value="OK">OK</option>
                 </select>
-                <!--<a href=\a>--><button disabled id="submit-button1" class="btn" onclick="addToTable()">提出する</button><!--</a><br>-->               
+                <button disabled id="submit-button1" class="btn" onclick="addToTable()">提出する</button><!--</a><br>-->              
                 
                 </div>
             </div>
@@ -110,13 +111,13 @@
             <div class="table-body">               
                 <!--<label for="myTable" style="text-align: left">機器No. SW 39</label>-->
                 <table id="myTable" style="width=100%" border ="2">
-                    <caption class="mainstatus">機器No.<input type="text" id="machineid" value="" style="width:5%"> </caption>
+                    <caption class="mainstatus">機器No.<input type="text" id="machineid" name="machineid" value="" style="width:5%"> </caption>
                     <thead>
                         <tr>
                             <th style="width:5%">番号No.</th>
                             <th style="width:5%">機器No.</th>
                             <th style="width:5%">ロットNo。</th> 
-                            <th style="width:10%">依頼者</th>
+                             <th style="width:10%">依頼者</th>
                             <th style="width:15%">エラー内容</th>
                             <th style="width:10%">KP</th>
                             <th style="width:15%">是正措置</th>
@@ -125,6 +126,7 @@
                             <th style="width:10%">終了日時</th> 
                             <th style="width:10%">合計時間 (分)</th> 
                         </tr>
+                      
                     </thead>
                     <tbody id="main">
 
@@ -132,29 +134,35 @@
                 </table>
 
                 <h3 class="maintablefooter" id="no-data">機器のダウンタイム監視(No Data Available)</h3>
-                
                 <div class="footer">
                     
                 <button id="exportToExcel" onclick="exportTableToExcel('myTable')">エクスポートデータ(.xls)</button>
+                <button id="deletelocalstorage" onclick="deleteData()">clear</button>
+                <button id="excel" onclick="tableToExcel()">try</button>
                 <!--<button id="button5" class="btn"onclick="TestLang()">try</button>-->
                 <p1 type="text" value="datenow" id="datenow"></p1>
-               
                 
                 <!-- <button id="submit-button3" class="btn"onclick="save_data()">SAVE</button> -->
-                <!-- <button id="submit-button4" class="btn"onclick="load_data()">LOAD</button> -->
-                
+                <!-- <button id="submit-button4" class="btn"onclick="load_data()">LOAD</button> -->     
                 </div>
             </div>      
         </div> 
-    </div>
-    
+    </div> 
 </body> 
+<script>
+    
+function runpy(){
+    var pythonScriptPath = "test.py";
+      // Run the Python script.
+      subprocess.run(["python", pythonScriptPath]);
+    }
+</script>
 
 <!--java script source file-->
-
    <!--script-->
 <script type="text/javascript" src="index.js"></script>
    </html>
+   <script defer src="test.py"></script>
 <script type="text/javascript" src="tabletoexcel.js"></script>
 </html>
 <script type="text/javascript" src="datetime.js"></script>
